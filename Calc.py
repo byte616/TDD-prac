@@ -7,8 +7,8 @@ class Calculator:
         elif op == "mul":
             return a * b
         elif op == "div":
-            if b == 0:
-                raise ValueError("Division by zero not allowed")
+            # if b == 0:
+            #     raise ValueError("Division by zero not allowed")
             return a / b
         else:
             raise ValueError(f"Unknown operation: {op}")
