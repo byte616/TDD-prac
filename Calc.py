@@ -4,7 +4,7 @@ class Calculator:
     
     # add sub operation
     def subtract(self, a, b):
-        return a + b
+        return a - b
     
     # add mul operation
     def multiply(self, a, b):
