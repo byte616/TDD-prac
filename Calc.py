@@ -1,17 +1,14 @@
 class Calculator:
-    def add(self, a, b):
-        return a + b
-    
-    # add sub operation
-    def subtract(self, a, b):
-        return a - b
-    
-    # add mul operation
-    def multiply(self, a, b):
-        return a * b
-    
-    # add div operation
-    def divide(self, a, b):
-        if b == 0:
-            raise ValueError("Cannot divide by zero.")
-        return a / b
+    def operate(self, a, b, op):
+        if op == "add":
+            return a + b
+        elif op == "sub":
+            return a - b
+        elif op == "mul":
+            return a * b
+        elif op == "div":
+            if b == 0:
+                raise ValueError("Division by zero not allowed")
+            return a / b
+        else:
+            raise ValueError(f"Unknown operation: {op}")

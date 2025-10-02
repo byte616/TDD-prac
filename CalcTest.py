@@ -2,27 +2,22 @@ import unittest
 from Calc import Calculator  # The class we are going to implement
 
 class TestCalculator(unittest.TestCase):
+    def setUp(self):
+        self.calc = Calculator()
+
     def test_add(self):
-        calc = Calculator()
-        result = calc.add(2, 3)
-        self.assertEqual(result, 5)  # Expect 2 + 3 = 5
-    
-    # add sub opeation test
+        self.assertEqual(self.calc.operate(2, 3, "add"), 5)
+
     def test_subtract(self):
-        calc = Calculator()
-        self.assertEqual(calc.subtract(19, 3), 16)
+        self.assertEqual(self.calc.operate(5, 2, "sub"), 3)
 
-    # add mul operation test
     def test_multiply(self):
-        calc = Calculator()
-        self.assertEqual(calc.multiply(7, 38), 266)
+        self.assertEqual(self.calc.operate(4, 3, "mul"), 12)
 
-    # add div operation test
     def test_divide(self):
-        calc = Calculator()
-        self.assertEqual(calc.divide(10, 2), 5.0)
+        self.assertEqual(self.calc.operate(10, 2, "div"), 5.0)
         with self.assertRaises(ValueError):
-            calc.divide(10, 0)
+            self.calc.operate(5, 0, "div")
 
 if __name__ == "__main__":
     unittest.main()
